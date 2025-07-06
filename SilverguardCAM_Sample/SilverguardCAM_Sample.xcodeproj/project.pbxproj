@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE0082F72E1B218600777607 /* SilverguardCAM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE0082F62E1B218600777607 /* SilverguardCAM.framework */; };
+		CE0082F82E1B218600777607 /* SilverguardCAM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE0082F62E1B218600777607 /* SilverguardCAM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEF4DA922E15980F00D76AC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEF4DA732E15980D00D76AC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEF4DA7A2E15980D00D76AC2;
+			remoteInfo = "SilverguardDICT Sample";
+		};
+		CEF4DA9C2E15980F00D76AC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEF4DA732E15980D00D76AC2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEF4DA7A2E15980D00D76AC2;
+			remoteInfo = "SilverguardDICT Sample";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE0082F92E1B218600777607 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CE0082F82E1B218600777607 /* SilverguardCAM.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CE0082F62E1B218600777607 /* SilverguardCAM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SilverguardCAM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE623BB72E1B18ED0061B8E4 /* SilverguardDICT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SilverguardDICT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF4DA7B2E15980D00D76AC2 /* SilverguardCAM_Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SilverguardCAM_Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF4DA912E15980F00D76AC2 /* SilverguardCAM_SampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SilverguardCAM_SampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF4DA9B2E15980F00D76AC2 /* SilverguardCAM_SampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SilverguardCAM_SampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF4DAF12E1598A100D76AC2 /* SilverguardDICT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SilverguardDICT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		CEF4DAA32E15980F00D76AC2 /* Exceptions for "SilverguardCAM_Sample" folder in "SilverguardCAM_Sample" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = CEF4DA7A2E15980D00D76AC2 /* SilverguardCAM_Sample */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		CEF4DA7D2E15980D00D76AC2 /* SilverguardCAM_Sample */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CEF4DAA32E15980F00D76AC2 /* Exceptions for "SilverguardCAM_Sample" folder in "SilverguardCAM_Sample" target */,
+			);
+			path = SilverguardCAM_Sample;
+			sourceTree = "<group>";
+		};
+		CEF4DA942E15980F00D76AC2 /* SilverguardCAM_SampleTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SilverguardCAM_SampleTests;
+			sourceTree = "<group>";
+		};
+		CEF4DA9E2E15980F00D76AC2 /* SilverguardCAM_SampleUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SilverguardCAM_SampleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEF4DA782E15980D00D76AC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0082F72E1B218600777607 /* SilverguardCAM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF4DA8E2E15980F00D76AC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF4DA982E15980F00D76AC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEF4DA722E15980D00D76AC2 = {
+			isa = PBXGroup;
+			children = (
+				CEF4DA7D2E15980D00D76AC2 /* SilverguardCAM_Sample */,
+				CEF4DA942E15980F00D76AC2 /* SilverguardCAM_SampleTests */,
+				CEF4DA9E2E15980F00D76AC2 /* SilverguardCAM_SampleUITests */,
+				CEF4DAF02E1598A100D76AC2 /* Frameworks */,
+				CEF4DA7C2E15980D00D76AC2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEF4DA7C2E15980D00D76AC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEF4DA7B2E15980D00D76AC2 /* SilverguardCAM_Sample.app */,
+				CEF4DA912E15980F00D76AC2 /* SilverguardCAM_SampleTests.xctest */,
+				CEF4DA9B2E15980F00D76AC2 /* SilverguardCAM_SampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEF4DAF02E1598A100D76AC2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE0082F62E1B218600777607 /* SilverguardCAM.framework */,
+				CE623BB72E1B18ED0061B8E4 /* SilverguardDICT.framework */,
+				CEF4DAF12E1598A100D76AC2 /* SilverguardDICT.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEF4DA7A2E15980D00D76AC2 /* SilverguardCAM_Sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEF4DAA42E15980F00D76AC2 /* Build configuration list for PBXNativeTarget "SilverguardCAM_Sample" */;
+			buildPhases = (
+				CEF4DA772E15980D00D76AC2 /* Sources */,
+				CEF4DA782E15980D00D76AC2 /* Frameworks */,
+				CEF4DA792E15980D00D76AC2 /* Resources */,
+				CE0082F92E1B218600777607 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				CEF4DA7D2E15980D00D76AC2 /* SilverguardCAM_Sample */,
+			);
+			name = SilverguardCAM_Sample;
+			productName = "SilverguardDICT Sample";
+			productReference = CEF4DA7B2E15980D00D76AC2 /* SilverguardCAM_Sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CEF4DA902E15980F00D76AC2 /* SilverguardCAM_SampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEF4DAA92E15980F00D76AC2 /* Build configuration list for PBXNativeTarget "SilverguardCAM_SampleTests" */;
+			buildPhases = (
+				CEF4DA8D2E15980F00D76AC2 /* Sources */,
+				CEF4DA8E2E15980F00D76AC2 /* Frameworks */,
+				CEF4DA8F2E15980F00D76AC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEF4DA932E15980F00D76AC2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CEF4DA942E15980F00D76AC2 /* SilverguardCAM_SampleTests */,
+			);
+			name = SilverguardCAM_SampleTests;
+			productName = "SilverguardDICT SampleTests";
+			productReference = CEF4DA912E15980F00D76AC2 /* SilverguardCAM_SampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CEF4DA9A2E15980F00D76AC2 /* SilverguardCAM_SampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEF4DAAC2E15980F00D76AC2 /* Build configuration list for PBXNativeTarget "SilverguardCAM_SampleUITests" */;
+			buildPhases = (
+				CEF4DA972E15980F00D76AC2 /* Sources */,
+				CEF4DA982E15980F00D76AC2 /* Frameworks */,
+				CEF4DA992E15980F00D76AC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEF4DA9D2E15980F00D76AC2 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CEF4DA9E2E15980F00D76AC2 /* SilverguardCAM_SampleUITests */,
+			);
+			name = SilverguardCAM_SampleUITests;
+			productName = "SilverguardDICT SampleUITests";
+			productReference = CEF4DA9B2E15980F00D76AC2 /* SilverguardCAM_SampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEF4DA732E15980D00D76AC2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					CEF4DA7A2E15980D00D76AC2 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					CEF4DA902E15980F00D76AC2 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = CEF4DA7A2E15980D00D76AC2;
+					};
+					CEF4DA9A2E15980F00D76AC2 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = CEF4DA7A2E15980D00D76AC2;
+					};
+				};
+			};
+			buildConfigurationList = CEF4DA762E15980D00D76AC2 /* Build configuration list for PBXProject "SilverguardCAM_Sample" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEF4DA722E15980D00D76AC2;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = CEF4DA7C2E15980D00D76AC2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEF4DA7A2E15980D00D76AC2 /* SilverguardCAM_Sample */,
+				CEF4DA902E15980F00D76AC2 /* SilverguardCAM_SampleTests */,
+				CEF4DA9A2E15980F00D76AC2 /* SilverguardCAM_SampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEF4DA792E15980D00D76AC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF4DA8F2E15980F00D76AC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF4DA992E15980F00D76AC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEF4DA772E15980D00D76AC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF4DA8D2E15980F00D76AC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF4DA972E15980F00D76AC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEF4DA932E15980F00D76AC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEF4DA7A2E15980D00D76AC2 /* SilverguardCAM_Sample */;
+			targetProxy = CEF4DA922E15980F00D76AC2 /* PBXContainerItemProxy */;
+		};
+		CEF4DA9D2E15980F00D76AC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEF4DA7A2E15980D00D76AC2 /* SilverguardCAM_Sample */;
+			targetProxy = CEF4DA9C2E15980F00D76AC2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CEF4DAA52E15980F00D76AC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 26VQM6YHFT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SilverguardCAM_Sample/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Precisamos do acesso ao microfone para que você possa gravar áudio.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Precisamos salvar imagens na sua galeria.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Precisamos acessar suas fotos para que você possa escolher uma imagem.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sanada.SilverguardCAM-Sample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEF4DAA62E15980F00D76AC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 26VQM6YHFT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SilverguardCAM_Sample/Info.plist;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Precisamos do acesso ao microfone para que você possa gravar áudio.";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Precisamos salvar imagens na sua galeria.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Precisamos acessar suas fotos para que você possa escolher uma imagem.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sanada.SilverguardCAM-Sample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CEF4DAA72E15980F00D76AC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEF4DAA82E15980F00D76AC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEF4DAAA2E15980F00D76AC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 26VQM6YHFT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sanada.SilverguardDICT-SampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SilverguardCAM_Sample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SilverguardCAM_Sample";
+			};
+			name = Debug;
+		};
+		CEF4DAAB2E15980F00D76AC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 26VQM6YHFT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sanada.SilverguardDICT-SampleTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SilverguardCAM_Sample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SilverguardCAM_Sample";
+			};
+			name = Release;
+		};
+		CEF4DAAD2E15980F00D76AC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 26VQM6YHFT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sanada.SilverguardDICT-SampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "SilverguardDICT Sample";
+			};
+			name = Debug;
+		};
+		CEF4DAAE2E15980F00D76AC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 26VQM6YHFT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sanada.SilverguardDICT-SampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "SilverguardDICT Sample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEF4DA762E15980D00D76AC2 /* Build configuration list for PBXProject "SilverguardCAM_Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF4DAA72E15980F00D76AC2 /* Debug */,
+				CEF4DAA82E15980F00D76AC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEF4DAA42E15980F00D76AC2 /* Build configuration list for PBXNativeTarget "SilverguardCAM_Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF4DAA52E15980F00D76AC2 /* Debug */,
+				CEF4DAA62E15980F00D76AC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEF4DAA92E15980F00D76AC2 /* Build configuration list for PBXNativeTarget "SilverguardCAM_SampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF4DAAA2E15980F00D76AC2 /* Debug */,
+				CEF4DAAB2E15980F00D76AC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEF4DAAC2E15980F00D76AC2 /* Build configuration list for PBXNativeTarget "SilverguardCAM_SampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEF4DAAD2E15980F00D76AC2 /* Debug */,
+				CEF4DAAE2E15980F00D76AC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEF4DA732E15980D00D76AC2 /* Project object */;
+}

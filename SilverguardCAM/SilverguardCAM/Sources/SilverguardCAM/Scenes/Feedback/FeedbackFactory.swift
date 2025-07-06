@@ -1,0 +1,35 @@
+import Foundation
+import UIKit
+
+protocol FeedbackFactoring {
+    static func present(_ feedbackDTO: FeedbackDTO, in controller: UIViewController, onClick: (() -> Void)?) -> FeedbackController
+}
+
+enum FeedbackFactory: FeedbackFactoring {
+    static private func create(
+        _ feedbackDTO: FeedbackDTO,
+        onClick: (() -> Void)? = nil
+    ) -> FeedbackController {
+        let coordinator = FeedbackCoordinator()
+        let presenter = FeedbackPresenter(coordinator: coordinator)
+        let interactor = FeedbackInteractor(presenter: presenter, feedbackDto: feedbackDTO)
+        let viewController = FeedbackViewController(interactor: interactor)
+        
+        coordinator.completion = onClick
+        presenter.controller = viewController
+        coordinator.controller = viewController
+        
+        return viewController
+    }
+    
+    static func present(
+        _ feedbackDTO: FeedbackDTO,
+        in controller: UIViewController,
+        onClick: (() -> Void)? = nil
+    ) -> any FeedbackController {
+        let feedback = create(feedbackDTO, onClick: onClick)
+        feedback.modalPresentationStyle = .fullScreen
+        controller.present(feedback, animated: false)
+        return feedback
+    }
+}
