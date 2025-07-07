@@ -63,9 +63,20 @@ class CustomColors: ColorsProtocol {
 ```
 
 ```swift
+final class CustomFonts: FontsProtocol {
+    var button: UIFont = UIFont.systemFont(ofSize: 14)
+    var body: UIFont = UIFont.systemFont(ofSize: 14)
+    
+    var headline2: UIFont = UIFont.systemFont(ofSize: 24)
+    var headline3: UIFont = UIFont.systemFont(ofSize: 20)
+}
+```
+
+```swift
 SilverguardCAM
     .configure(with: "SUA_API_KEY")
     .setStyle(colors: CustomColors())
+    .setFonts(fonts: CustomFonts())
 ```
 
 ### 3. Inicialização do fluxo
