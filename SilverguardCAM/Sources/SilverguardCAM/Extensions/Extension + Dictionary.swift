@@ -1,7 +1,7 @@
 import Foundation
 
 extension Dictionary {
-    public var data: Data? {
+    var data: Data? {
         do {
             let jsonData = try JSONSerialization.data(withJSONObject: self,
                                                       options: .prettyPrinted)

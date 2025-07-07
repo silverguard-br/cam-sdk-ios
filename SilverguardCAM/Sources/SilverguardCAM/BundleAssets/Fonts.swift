@@ -1,6 +1,6 @@
 import UIKit
 
-public enum Fonts {
+enum Fonts {
     public static func regular(size: CGFloat) -> UIFont {
         return UIFont(name: "Figtree-Regular", size: size) ?? .systemFont(ofSize: size)
     }

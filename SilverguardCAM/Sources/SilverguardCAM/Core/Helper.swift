@@ -1,6 +1,6 @@
 import Foundation
 
-public struct Helper {
+struct Helper {
     public static func print(_ message: Any) {
         #if DEBUG
         let formatter = DateFormatter()

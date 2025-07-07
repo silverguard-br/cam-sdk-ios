@@ -1,7 +1,7 @@
 import Foundation
 
 /// `HTTP` Request method.
-public struct NetworkMethod: RawRepresentable, Equatable, Hashable {
+struct NetworkMethod: RawRepresentable, Equatable, Hashable {
     /// `DELETE` method.
     public static let delete = NetworkMethod(rawValue: "DELETE")
     /// `GET` method.

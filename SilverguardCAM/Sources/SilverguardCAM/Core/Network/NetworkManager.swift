@@ -1,6 +1,6 @@
 import Foundation
 
-public class NetworkManager<N: NetworkTask>: Requestable {
+class NetworkManager<N: NetworkTask>: Requestable {
     public init() { }
     
     /// Makes a `request`.

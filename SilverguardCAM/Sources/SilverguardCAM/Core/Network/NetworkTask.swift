@@ -1,7 +1,7 @@
 import Foundation
 
 /// Creates an requestable enum.
-public protocol NetworkTask {
+protocol NetworkTask {
     /// The target's base `URL`.
     var baseURL: NetworkBaseURL { get }
 
@@ -21,11 +21,11 @@ public protocol NetworkTask {
     var headers: [String: String]? { get }
 }
 
-public enum EncodingMethod {
+enum EncodingMethod {
     case queryString
     case body
 }
 
-public enum NetworkBaseURL {
+enum NetworkBaseURL {
     case url(URL)
 }

@@ -1,6 +1,6 @@
 import UIKit
 
-public class ImageDownloader {
+class ImageDownloader {
     
     public init () { }
     

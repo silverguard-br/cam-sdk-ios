@@ -1,10 +1,10 @@
 import Foundation
 
-public protocol BodyEncodable: Codable {
+protocol BodyEncodable: Codable {
     func body() -> [String: Any]
 }
 
-public extension BodyEncodable {
+extension BodyEncodable {
     func body() -> [String: Any] {
         let encoder = JSONEncoder()
         encoder.keyEncodingStrategy = .convertToSnakeCase

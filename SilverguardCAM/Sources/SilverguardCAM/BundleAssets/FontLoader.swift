@@ -1,8 +1,8 @@
 import UIKit
 import CoreText
 
-public enum FontLoader {
-    public static func loadFonts() {
+enum FontLoader {
+    static func loadFonts() {
         registerFont("Figtree-Regular", ext: "ttf")
         registerFont("Figtree-Medium", ext: "ttf")
         registerFont("Figtree-SemiBold", ext: "ttf")

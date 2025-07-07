@@ -1,4 +1,4 @@
-public enum NetworkError: Error {
+enum NetworkError: Error {
     case unauthorized
     case invalidData
     case error(Error)
