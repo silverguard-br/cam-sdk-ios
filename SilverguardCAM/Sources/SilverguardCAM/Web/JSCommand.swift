@@ -1,7 +1,7 @@
 enum JSCommand: String, CaseIterable {
     case back
-    case askForMicrophone
-    case askForLibrary
+    case askForMicrophone = "requestMicrophonePermission"
+    case askForLibrary = "requestLibraryPermission"
 }
 
 enum JSAnswer: String, CaseIterable {
