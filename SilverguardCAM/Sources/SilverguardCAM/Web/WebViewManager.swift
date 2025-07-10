@@ -4,6 +4,7 @@ final class WebViewManager: NSObject {
     private lazy var webView: NativeWebView = {
         let webView = NativeWebView()
         webView.navigationDelegate = self
+        webView.uiDelegate = self
         return webView
     }()
     
@@ -119,5 +120,15 @@ extension WebViewManager: WKNavigationDelegate {
         } else {
             spinner.stopAnimating()
         }
+    }
+}
+
+extension WebViewManager: WKUIDelegate {
+    func webView(_ webView: WKWebView,
+                 requestMediaCapturePermissionFor origin: WKSecurityOrigin,
+                 initiatedByFrame frame: WKFrameInfo,
+                 type: WKMediaCaptureType,
+                 decisionHandler: @escaping (WKPermissionDecision) -> Void) {
+        decisionHandler(.grant)
     }
 }

@@ -19,6 +19,9 @@ final class NativeWebView: WKWebView {
         config.preferences = preferences
         config.allowsInlineMediaPlayback = true
         config.mediaTypesRequiringUserActionForPlayback = []
+        if #available(iOS 15.0, *) {
+            config.defaultWebpagePreferences.allowsContentJavaScript = true
+        }
 
         let userContentController = config.userContentController
         userContentController.addUserScript(NativeWebView.injectViewportScript())
