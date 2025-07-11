@@ -66,6 +66,7 @@ final class FeedbackViewController: ViewController<FeedbackInteractorProtocol>, 
         label.textColor = Stylesheet.colors.label
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
         return label
     }()
 
@@ -75,6 +76,7 @@ final class FeedbackViewController: ViewController<FeedbackInteractorProtocol>, 
         label.textColor = Stylesheet.colors.label
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
         return label
     }()
 
