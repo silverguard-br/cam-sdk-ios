@@ -124,6 +124,7 @@ extension WebViewManager: WKNavigationDelegate {
 }
 
 extension WebViewManager: WKUIDelegate {
+    @available(iOS 15.0, *)
     func webView(_ webView: WKWebView,
                  requestMediaCapturePermissionFor origin: WKSecurityOrigin,
                  initiatedByFrame frame: WKFrameInfo,
