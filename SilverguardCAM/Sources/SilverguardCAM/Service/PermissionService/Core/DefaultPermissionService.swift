@@ -1,3 +1,5 @@
+import UIKit
+
 final class PermissionService: PermissionServicing {
     private let microphoneService: PermissionProviding
     private let libraryService: PermissionProviding
@@ -34,6 +36,13 @@ final class PermissionService: PermissionServicing {
             return microphoneService.currentStatus()
         case .library:
             return libraryService.currentStatus()
+        }
+    }
+    
+    func openSettings() {
+        if let url = URL(string: UIApplication.openSettingsURLString),
+           UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 }

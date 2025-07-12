@@ -51,6 +51,12 @@ final class FeedbackViewController: ViewController<FeedbackInteractorProtocol>, 
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    private lazy var imageContainer: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -96,10 +102,6 @@ final class FeedbackViewController: ViewController<FeedbackInteractorProtocol>, 
         containerView.addSubview(stackView)
         view.addSubview(button)
 
-        let imageContainer = UIView()
-        imageContainer.translatesAutoresizingMaskIntoConstraints = false
-        imageContainer.addSubview(accessoryImageView)
-
         stackView.addArrangedSubview(imageContainer)
         stackView.addArrangedSubview(bodyStackView)
 
@@ -107,8 +109,13 @@ final class FeedbackViewController: ViewController<FeedbackInteractorProtocol>, 
 
         bodyStackView.addArrangedSubview(titleLabel)
         bodyStackView.addArrangedSubview(descriptionLabel)
+    }
+    
+    override func configureViews() {
+        view.backgroundColor = Stylesheet.colors.background
+    }
 
-        // Constraints da imagem centralizada
+    override func configureConstraints() {
         NSLayoutConstraint.activate([
             accessoryImageView.centerXAnchor.constraint(equalTo: imageContainer.centerXAnchor),
             accessoryImageView.topAnchor.constraint(equalTo: imageContainer.topAnchor),
@@ -121,9 +128,7 @@ final class FeedbackViewController: ViewController<FeedbackInteractorProtocol>, 
             imageView.widthAnchor.constraint(equalToConstant: Anatomy.imageViewSize),
             imageView.heightAnchor.constraint(equalToConstant: Anatomy.imageViewSize)
         ])
-    }
 
-    override func configureConstraints() {
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: view.topAnchor),
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),

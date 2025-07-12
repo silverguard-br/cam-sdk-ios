@@ -7,6 +7,8 @@ public protocol SilverguardCAMConfiguring {
     static func configure(with apiKey: APIKey) -> SilverguardCAMProtocol.Type
     @discardableResult
     static func setStyle(colors: any ColorsProtocol) -> SilverguardCAMProtocol.Type
+    @discardableResult
+    static func setFonts(fonts: any FontsProtocol) -> SilverguardCAMProtocol.Type
 }
 
 public protocol SilverguardCAMFactory {
@@ -32,6 +34,12 @@ public final class SilverguardCAM: SilverguardCAMConfiguring, SilverguardCAMFact
     @discardableResult
     public static func setStyle(colors: any ColorsProtocol) -> SilverguardCAMProtocol.Type {
         Stylesheet.setStyle(color: colors)
+        return SilverguardCAM.self
+    }
+    
+    @discardableResult
+    public static func setFonts(fonts: any FontsProtocol) -> SilverguardCAMProtocol.Type {
+        Stylesheet.setFonts(fonts: fonts)
         return SilverguardCAM.self
     }
     

@@ -51,6 +51,10 @@ final class LoadingViewController: ViewController<LoadingInteractorProtocol> {
         stackView.addArrangedSubview(label)
     }
     
+    override func configureViews() {
+        view.backgroundColor = Stylesheet.colors.background
+    }
+    
     override func configureConstraints() {
         NSLayoutConstraint.activate(
             [

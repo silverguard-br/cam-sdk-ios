@@ -23,6 +23,7 @@ final class DictWebviewViewController: ViewController<DictWebviewInteractorProto
     }
     
     override func configureViews() {
+        view.backgroundColor = Stylesheet.colors.background
         view.addSubview(webviewManager.view)
     }
     
