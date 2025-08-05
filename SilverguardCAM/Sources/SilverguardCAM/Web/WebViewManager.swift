@@ -72,6 +72,9 @@ final class WebViewManager: NSObject {
     
     @discardableResult
     func load(url: URL) -> Self {
+        if !AllowList.check(url) {
+            return self
+        }
         let request = URLRequest(url: url)
         webView.load(request)
         return self

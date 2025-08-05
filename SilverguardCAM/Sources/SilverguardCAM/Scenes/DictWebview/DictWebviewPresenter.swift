@@ -4,7 +4,7 @@ protocol DictWebviewPresenterProtocol: AnyObject {
     func loading(_ loading: Bool)
     func load(webview: URL)
     func error(_ error: NetworkError)
-    func back()
+    func back(from origin: String?)
     func sendCommand(_ command: JSAnswer, payload: [String: String]?)
 }
 
@@ -16,8 +16,8 @@ final class DictWebviewPresenter: DictWebviewPresenterProtocol {
         self.coordinator = coordinator
     }
     
-    func back() {
-        coordinator.back()
+    func back(from origin: String?) {
+        coordinator.back(from: origin)
     }
 
     func loading(_ loading: Bool) {

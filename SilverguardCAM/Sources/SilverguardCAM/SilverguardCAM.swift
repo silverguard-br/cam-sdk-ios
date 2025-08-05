@@ -12,14 +12,14 @@ public protocol SilverguardCAMConfiguring {
 }
 
 public protocol SilverguardCAMFactory {
-    static func start(with dto: DICTModel) -> UIViewController
+    static func start(with dto: DICTModel, navigationHandler: SilverguardNavigationHandlerDelegate) -> UIViewController
+    static func start(for dictList: DICTListModel, navigationHandler: SilverguardNavigationHandlerDelegate) -> UIViewController
 }
 
 public final class SilverguardCAM: SilverguardCAMConfiguring, SilverguardCAMFactory {
     static let storage: SecureStoraging = SecureStorage.shared
     
-    private init() {
-    }
+    private init() {}
     
     @discardableResult
     public static func configure(
@@ -45,8 +45,17 @@ public final class SilverguardCAM: SilverguardCAMConfiguring, SilverguardCAMFact
     
     @discardableResult
     public static func start(
-        with dto: DICTModel
+        with dto: DICTModel,
+        navigationHandler: SilverguardNavigationHandlerDelegate
     ) -> UIViewController {
-        DictWebviewFactory.create(dict: dto)
+        DictWebviewFactory.create(dict: dto, navigationHandler: navigationHandler)
+    }
+    
+    @discardableResult
+    public static func start(
+        for dictList: DICTListModel,
+        navigationHandler: SilverguardNavigationHandlerDelegate
+    ) -> UIViewController {
+        DictWebviewFactory.create(list: dictList, navigationHandler: navigationHandler)
     }
 }

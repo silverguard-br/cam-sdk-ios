@@ -2,6 +2,7 @@ import Foundation
 
 internal enum DictRepository: NetworkTask {
     case med(DICTModel)
+    case list(DICTListModel)
 }
 
 extension DictRepository {
@@ -16,12 +17,14 @@ extension DictRepository {
         switch self {
         case .med:
             return "api/v1/med-requests"
+        case .list:
+            return "api/v1/med-requests/list-url"
         }
     }
     
     var method: NetworkMethod {
         switch self {
-        case .med:
+        case .med, .list:
             return .post
         }
     }
@@ -30,19 +33,21 @@ extension DictRepository {
         switch self {
         case .med(let dict):
             return dict.body()
+        case .list(let dto):
+            return dto.body()
         }
     }
     
     var encoding: EncodingMethod {
         switch self {
-        case .med:
+        case .med, .list:
             return .body
         }
     }
     
     var headers: [String : String]? {
         switch self {
-        case .med:
+        case .med, .list:
             let apiKey = SecureStorage.shared.get(key: .apiKey) ?? ""
             return [
                 "Authorization": "Bearer \(apiKey)",

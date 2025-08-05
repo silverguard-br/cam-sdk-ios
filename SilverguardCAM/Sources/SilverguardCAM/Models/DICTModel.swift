@@ -1,56 +1,56 @@
 import Foundation
 
 public struct DICTModel: BodyEncodable {
-    let transaction: DICTTransaction
-    let destinationBank: DICTBank
-    let originBankCustomer: DICTBankCustomer
-    let destinationBankCustomer: DICTBankCustomer
-    
-    public init(
-        transaction: DICTTransaction,
-        destinationBank: DICTBank,
-        originBankCustomer: DICTBankCustomer,
-        destinationBankCustomer: DICTBankCustomer
+    let transactionId: String
+    let transactionAmount: Double
+    let transactionTim: String
+    let transactionDescription: String
+    let reporterClientName: String
+    let reporterClientId: Int
+    let contestedParticipantId: String
+    let counterpartyClientName: String
+    let counterpartyClientId: Int
+    let counterpartyClientKey: String
+    let protocolId: String
+    let pixAuto: Bool
+    let clientId: String
+    let clientSince: String
+    let clientBirth: String
+    let autofraudRisk: Bool
+
+    init(
+        transactionId: String,
+        transactionAmount: Double,
+        transactionTim: String,
+        transactionDescription: String,
+        reporterClientName: String,
+        reporterClientId: Int,
+        contestedParticipantId: String,
+        counterpartyClientName: String,
+        counterpartyClientId: Int,
+        counterpartyClientKey: String,
+        protocolId: String,
+        pixAuto: Bool,
+        clientId: String,
+        clientSince: String,
+        clientBirth: String,
+        autofraudRisk: Bool
     ) {
-        self.transaction = transaction
-        self.destinationBank = destinationBank
-        self.originBankCustomer = originBankCustomer
-        self.destinationBankCustomer = destinationBankCustomer
-    }
-}
-
-public struct DICTTransaction: BodyEncodable {
-    let e2e: String
-    let amount: Int
-    let date: String
-    
-    public init(e2e: String, amount: Int, date: String) {
-        self.e2e = e2e
-        self.amount = amount
-        self.date = date
-    }
-}
-
-public struct DICTBank: BodyEncodable {
-    let name: String
-    let ispb: Int
-    let compe: Int
-    
-    public init(name: String, ispb: Int, compe: Int) {
-        self.name = name
-        self.ispb = ispb
-        self.compe = compe
-    }
-}
-
-public struct DICTBankCustomer: BodyEncodable {
-    let name: String
-    let document: String
-    let documentType: String
-    
-    public init(name: String, document: String, documentType: String) {
-        self.name = name
-        self.document = document
-        self.documentType = documentType
+        self.transactionId = transactionId
+        self.transactionAmount = transactionAmount
+        self.transactionTim = transactionTim
+        self.transactionDescription = transactionDescription
+        self.reporterClientName = reporterClientName
+        self.reporterClientId = reporterClientId
+        self.contestedParticipantId = contestedParticipantId
+        self.counterpartyClientName = counterpartyClientName
+        self.counterpartyClientId = counterpartyClientId
+        self.counterpartyClientKey = counterpartyClientKey
+        self.protocolId = protocolId
+        self.pixAuto = pixAuto
+        self.clientId = clientId
+        self.clientSince = clientSince
+        self.clientBirth = clientBirth
+        self.autofraudRisk = autofraudRisk
     }
 }

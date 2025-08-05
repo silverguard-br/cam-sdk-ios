@@ -10,17 +10,17 @@ final class DictWebviewInteractor {
     public let presenter: DictWebviewPresenterProtocol
     public let service: DictWebviewServiceProtocol
     private let permissionService: PermissionServicing
-    private let model: DICTModel
+    private let repository: DictRepository
     
     public init(
         presenter: DictWebviewPresenterProtocol,
         service: DictWebviewServiceProtocol,
         permissionService: PermissionServicing,
-        model: DICTModel
+        repository: DictRepository
     ) {
         self.presenter = presenter
         self.service = service
-        self.model = model
+        self.repository = repository
         self.permissionService = permissionService
     }
 }
@@ -28,7 +28,7 @@ final class DictWebviewInteractor {
 extension DictWebviewInteractor: DictWebviewInteractorProtocol {
     func load() {
         loading(true)
-        service.request(med: model) { [weak self] result in
+        service.request(endpoint: repository) { [weak self] result in
             switch result {
             case .success(let success):
                 self?.handleSuccess(success)
@@ -45,7 +45,8 @@ extension DictWebviewInteractor: DictWebviewInteractorProtocol {
     func resolve(command: JSCommand, data: [String: String]?) {
         switch command {
         case .back:
-            presenter.back()
+            let origin = data?["origin"]
+            presenter.back(from: origin)
         case .askForMicrophone:
             askPermission(for: .microphone, answering: .microphonePermission)
         case .askForLibrary:

@@ -1,5 +1,5 @@
 protocol DictWebviewServiceProtocol: AnyObject {
-    func request(med: DICTModel, completion: @escaping (Result<DICTResponse, NetworkError>) -> Void)
+    func request(endpoint: DictRepository, completion: @escaping (Result<DICTResponse, NetworkError>) -> Void)
 }
 
 final class DictWebviewService: DictWebviewServiceProtocol {
@@ -8,11 +8,11 @@ final class DictWebviewService: DictWebviewServiceProtocol {
     init() {}
     
     func request(
-        med: DICTModel,
+        endpoint: DictRepository,
         completion: @escaping (Result<DICTResponse, NetworkError>) -> Void
     ) {
         network.request(
-            .med(med),
+            endpoint,
             map: DICTResponse.self,
             result: completion
         )
