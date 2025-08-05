@@ -25,6 +25,7 @@ final class WebViewManager: NSObject {
     
     private var onStartLoading: (() -> Void)?
     private var onStopLoading: (() -> Void)?
+    private var onAllowListError: (() -> Void)?
 
     override init() {
         super.init()
@@ -73,6 +74,7 @@ final class WebViewManager: NSObject {
     @discardableResult
     func load(url: URL) -> Self {
         if !AllowList.check(url) {
+            onAllowListError?()
             return self
         }
         let request = URLRequest(url: url)
@@ -83,10 +85,12 @@ final class WebViewManager: NSObject {
     @discardableResult
     func configure(
         start: @escaping () -> Void,
-        stop: @escaping () -> Void
+        stop: @escaping () -> Void,
+        error: @escaping () -> Void
     ) -> Self {
         onStartLoading = start
         onStopLoading = stop
+        onAllowListError = error
         spinner.isHidden = true
         return self
     }

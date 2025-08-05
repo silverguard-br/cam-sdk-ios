@@ -4,6 +4,7 @@ protocol DictWebviewInteractorProtocol: AnyObject {
     func load()
     func resolve(command: JSCommand, data: [String: String]?)
     func stopLoading()
+    func error()
 }
 
 final class DictWebviewInteractor {
@@ -26,6 +27,10 @@ final class DictWebviewInteractor {
 }
 
 extension DictWebviewInteractor: DictWebviewInteractorProtocol {
+    func error() {
+        handleFailure(.unauthorized)
+    }
+    
     func load() {
         loading(true)
         service.request(endpoint: repository) { [weak self] result in

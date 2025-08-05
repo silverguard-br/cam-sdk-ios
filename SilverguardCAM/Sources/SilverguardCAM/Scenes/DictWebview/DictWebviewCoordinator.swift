@@ -36,9 +36,10 @@ final class DictWebviewCoordinator: DictWebviewCoordinatorProtocol {
             self?.feedbackController = FeedbackFactory.present(
                 dto,
                 in: controller,
-                onClick: { feedbackController in
+                onClick: { [weak self] feedbackController in
                     feedbackController.view.removeFromSuperview()
                     feedbackController.removeFromParent()
+                    self?.back(from: nil)
                 }
             )
         }

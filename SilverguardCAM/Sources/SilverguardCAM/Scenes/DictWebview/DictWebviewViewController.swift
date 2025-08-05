@@ -51,6 +51,9 @@ extension DictWebviewViewController: DictWebviewViewControllerProtocol {
                     start: {},
                     stop: { [weak self] in
                         self?.interactor.stopLoading()
+                    },
+                    error: { [weak self] in
+                        self?.interactor.error()
                     }
                 )
                 .load(url: webview)
