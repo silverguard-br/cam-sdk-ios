@@ -7,13 +7,14 @@ protocol FeedbackCoordinatorProtocol: AnyObject {
 
 final class FeedbackCoordinator: FeedbackCoordinatorProtocol {
     public weak var controller: UIViewController?
-    var completion: (() -> Void)? = nil
+    var completion: ((UIViewController) -> Void)? = nil
     
     public init() { }
 
     func onClick() {
-        controller?.dismiss(animated: false) { [weak self] in
-            self?.completion?()
+        guard let controller else { return }
+        controller.dismiss(animated: false) { [weak self] in
+            self?.completion?(controller)
         }
     }
 }

@@ -105,6 +105,7 @@ final class FeedbackViewController: ViewController<FeedbackInteractorProtocol>, 
         stackView.addArrangedSubview(imageContainer)
         stackView.addArrangedSubview(bodyStackView)
 
+        imageContainer.addSubview(accessoryImageView)
         accessoryImageView.addSubview(imageView)
 
         bodyStackView.addArrangedSubview(titleLabel)

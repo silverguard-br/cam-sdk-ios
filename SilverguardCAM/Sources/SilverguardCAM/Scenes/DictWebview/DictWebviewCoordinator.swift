@@ -36,8 +36,8 @@ final class DictWebviewCoordinator: DictWebviewCoordinatorProtocol {
             self?.feedbackController = FeedbackFactory.present(
                 dto,
                 in: controller,
-                onClick: { [weak self] in
-                    self?.controller?.navigationController?.popViewController(animated: true)
+                onClick: { feedbackController in
+                    feedbackController.navigationController?.popViewController(animated: true)
                 }
             )
         }

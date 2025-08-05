@@ -3,13 +3,13 @@ import Foundation
 public struct DICTModel: BodyEncodable {
     let transactionId: String
     let transactionAmount: Double
-    let transactionTim: String
+    let transactionTime: String
     let transactionDescription: String
     let reporterClientName: String
-    let reporterClientId: Int
+    let reporterClientId: String
     let contestedParticipantId: String
     let counterpartyClientName: String
-    let counterpartyClientId: Int
+    let counterpartyClientId: String
     let counterpartyClientKey: String
     let protocolId: String
     let pixAuto: Bool
@@ -18,16 +18,16 @@ public struct DICTModel: BodyEncodable {
     let clientBirth: String
     let autofraudRisk: Bool
 
-    init(
+    public init(
         transactionId: String,
         transactionAmount: Double,
-        transactionTim: String,
+        transactionTime: String,
         transactionDescription: String,
         reporterClientName: String,
-        reporterClientId: Int,
+        reporterClientId: String,
         contestedParticipantId: String,
         counterpartyClientName: String,
-        counterpartyClientId: Int,
+        counterpartyClientId: String,
         counterpartyClientKey: String,
         protocolId: String,
         pixAuto: Bool,
@@ -38,7 +38,7 @@ public struct DICTModel: BodyEncodable {
     ) {
         self.transactionId = transactionId
         self.transactionAmount = transactionAmount
-        self.transactionTim = transactionTim
+        self.transactionTime = transactionTime
         self.transactionDescription = transactionDescription
         self.reporterClientName = reporterClientName
         self.reporterClientId = reporterClientId
