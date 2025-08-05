@@ -27,15 +27,15 @@ enum FeedbackFactory: FeedbackFactoring {
         in controller: UIViewController,
         onClick: ((UIViewController) -> Void)? = nil
     ) -> any FeedbackController {
-        let loading = create(loadingDTO)
-        controller.addChild(loading)
-        controller.view.addSubview(loading.view)
+        let feedback = create(feedbackDTO, onClick: onClick)
+        controller.addChild(feedback)
+        controller.view.addSubview(feedback.view)
         NSLayoutConstraint.activate(
             [
-                loading.view.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor),
-                loading.view.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor),
-                loading.view.topAnchor.constraint(equalTo: controller.view.topAnchor),
-                loading.view.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor)
+                feedback.view.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor),
+                feedback.view.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor),
+                feedback.view.topAnchor.constraint(equalTo: controller.view.topAnchor),
+                feedback.view.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor)
             ]
         )
         return feedback
