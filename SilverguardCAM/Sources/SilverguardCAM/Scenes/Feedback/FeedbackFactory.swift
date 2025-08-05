@@ -6,7 +6,7 @@ protocol FeedbackFactoring {
 }
 
 enum FeedbackFactory: FeedbackFactoring {
-    static private func create(
+    static func create(
         _ feedbackDTO: FeedbackDTO,
         onClick: ((UIViewController) -> Void)? = nil
     ) -> FeedbackController {
@@ -27,9 +27,17 @@ enum FeedbackFactory: FeedbackFactoring {
         in controller: UIViewController,
         onClick: ((UIViewController) -> Void)? = nil
     ) -> any FeedbackController {
-        let feedback = create(feedbackDTO, onClick: onClick)
-        feedback.modalPresentationStyle = .fullScreen
-        controller.present(feedback, animated: false)
+        let loading = create(loadingDTO)
+        controller.addChild(loading)
+        controller.view.addSubview(loading.view)
+        NSLayoutConstraint.activate(
+            [
+                loading.view.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor),
+                loading.view.trailingAnchor.constraint(equalTo: controller.view.trailingAnchor),
+                loading.view.topAnchor.constraint(equalTo: controller.view.topAnchor),
+                loading.view.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor)
+            ]
+        )
         return feedback
     }
 }

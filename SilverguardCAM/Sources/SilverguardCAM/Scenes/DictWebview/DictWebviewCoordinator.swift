@@ -37,7 +37,8 @@ final class DictWebviewCoordinator: DictWebviewCoordinatorProtocol {
                 dto,
                 in: controller,
                 onClick: { feedbackController in
-                    feedbackController.navigationController?.popViewController(animated: true)
+                    feedbackController.view.removeFromSuperview()
+                    feedbackController.removeFromParent()
                 }
             )
         }
