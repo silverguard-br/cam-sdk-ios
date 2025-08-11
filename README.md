@@ -1,10 +1,14 @@
 # SilverguardCAM
 
+SDK iOS para integração com o fluxo de **Contestação CAM** da Silverguard.
+
+---
+
 ## 📦 Instalação
 
-### CocoaPods
+### 1. CocoaPods
 
-Se ainda não tem o CocoaPods instalado, veja: https://cocoapods.org/
+Se ainda não tiver o CocoaPods instalado, siga as instruções em: [https://cocoapods.org/](https://cocoapods.org/)
 
 Adicione no seu `Podfile`:
 
@@ -12,21 +16,25 @@ Adicione no seu `Podfile`:
 pod 'SilverguardCAM', :git => 'https://github.com/silverguard-br/cam-sdk-ios.git', :tag => '1.0.0'
 ```
 
+E execute:
+
 ```bash
 pod install
 ```
 
-### Swift Package Manager (SPM)
+---
 
-1. Xcode > File > Add Packages...
-2. Use a URL:
+### 2. Swift Package Manager (SPM)
+
+1. No Xcode, vá em **File > Add Packages...**  
+2. Use a URL:  
 
 ```
 https://github.com/silverguard-br/cam-sdk-ios.git
 ```
 
-3. Selecione versão `1.0.0` ou superior.  
-4. Adicione ao seu target.
+3. Escolha a versão **`1.0.0` ou superior**  
+4. Adicione ao seu **target**.
 
 ---
 
@@ -38,16 +46,21 @@ https://github.com/silverguard-br/cam-sdk-ios.git
 import SilverguardCAM
 ```
 
+---
+
 ### 2. Configuração (AppDelegate ou SceneDelegate)
 
+Antes de iniciar qualquer fluxo, configure o SDK com sua **API Key**:
+
 ```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    SilverguardCAM.configure(with: "SUA_API_KEY")
-    return true
-}
+SilverguardCAM.configure(with: "SUA_API_KEY")
 ```
 
-#### Opcional: Estilo customizado
+---
+
+### 3. Customização de Estilo (Opcional)
+
+Você pode personalizar **cores** e **fontes** do SDK implementando os protocolos `ColorsProtocol` e `FontsProtocol`:
 
 ```swift
 class CustomColors: ColorsProtocol {
@@ -60,17 +73,16 @@ class CustomColors: ColorsProtocol {
     var buttonEnabled: UIColor = .green
     var buttonDisabled: UIColor = .lightGray
 }
-```
 
-```swift
 final class CustomFonts: FontsProtocol {
     var button: UIFont = UIFont.systemFont(ofSize: 14)
     var body: UIFont = UIFont.systemFont(ofSize: 14)
-    
     var headline2: UIFont = UIFont.systemFont(ofSize: 24)
     var headline3: UIFont = UIFont.systemFont(ofSize: 20)
 }
 ```
+
+Aplicando o estilo:
 
 ```swift
 SilverguardCAM
@@ -79,92 +91,81 @@ SilverguardCAM
     .setFonts(fonts: CustomFonts())
 ```
 
-### 3. Inicialização do fluxo
+---
+
+### 4. Inicialização dos fluxos
+
+O SDK oferece **dois fluxos principais**:
+
+#### a) Criar uma nova contestação
 
 ```swift
-let controller = SilverguardCAM.start(with: model)
+let controller = SilverguardCAM.start(
+    with: dictModel, // Instância de DICTModel
+    navigationHandler: self // Delegate para eventos de navegação
+)
 navigationController?.pushViewController(controller, animated: true)
 ```
 
-### 4. Modelos obrigatórios
+#### b) Visualizar lista de contestações
 
 ```swift
-DICTModel(
-  transaction: DICTTransaction(
-    e2e: "abc",
-    amount: 100,
-    date: "2025-04-16 11:10:00" // Formato: yyyy-MM-dd HH:mm:ss
-  ),
-  destinationBank: DICTBank(
-    name: "Banco A",
-    ispb: 123456,
-    compe: 1
-  ),
-  originBankCustomer: DICTBankCustomer(
-    name: "Cliente A",
-    document: "12345678901",
-    documentType: "cpf"
-  ),
-  destinationBankCustomer: DICTBankCustomer(
-    name: "Cliente B",
-    document: "98765432100",
-    documentType: "cpf"
-  )
+let controller = SilverguardCAM.start(
+    for: dictListModel, // Instância de DICTListModel
+    navigationHandler: self
+)
+navigationController?.pushViewController(controller, animated: true)
+```
+
+---
+
+### 5. Modelos obrigatórios
+
+#### `DICTModel` (nova contestação)
+
+```swift
+let model = DICTModel(
+    transactionId: UUID().uuidString,
+    transactionAmount: 100,
+    transactionTime: "2025-07-10 11:10:00", // Formato: yyyy-MM-dd HH:mm:ss
+    transactionDescription: "Pagamento via PIX",
+    reporterClientName: "Fulano de Tal",
+    reporterClientId: "12345678901234",
+    contestedParticipantId: "123456",
+    counterpartyClientName: "John Doe",
+    counterpartyClientId: "12345678901",
+    counterpartyClientKey: "cpf",
+    protocolId: UUID().uuidString,
+    pixAuto: true,
+    clientId: "CLI_456789",
+    clientSince: "2020-01-15",
+    clientBirth: "1985-03-22",
+    autofraudRisk: true
+)
+```
+
+#### `DICTListModel` (lista de contestações)
+
+```swift
+let listModel = DICTListModel(
+    reporterClientId: "12345678901234"
 )
 ```
 
 ---
 
-## 🌐 Comunicação JavaScript ⇄ Swift
+### 6. Captura de retorno com `SilverguardNavigationHandlerDelegate`
 
-A comunicação entre o JS e o app nativo é feita via `WKWebView` usando `window.webkit.messageHandlers.bridge.postMessage`.
+Implemente este delegate para capturar quando o usuário retorna do fluxo, com um `command` indicando de qual parte ele saiu:
 
-### 🔼 Comandos do JavaScript → Swift (`JSCommand`)
-
-| Comando          | Payload           | Descrição                        |
-|------------------|-------------------|---------------------------------|
-| `back`           | *nenhum*          | Navega para a tela anterior.    |
-| `askForMicrophone`| *nenhum*          | Solicita permissão do microfone.|
-| `askForLibrary`   | *nenhum*          | Solicita permissão da biblioteca.|
-
-**Exemplo JavaScript:**
-
-```js
-window.webkit.messageHandlers.bridge.postMessage({
-  command: "askForMicrophone",
-  payload: null
-});
-```
-
-### 🔽 Comandos do Swift → JavaScript (`JSAnswer`)
-
-Swift responde enviando comandos com payload contendo o status da permissão, usando o enum `PermissionStatus`:
-
-| Comando               | Payload                                                                | Descrição                             |
-|-----------------------|--------------------------------------------------------------------------------|-------------------------------------|
-| `microphonePermission` | `{ status: "authorized" / "denied" / "notDetermined" }` | Retorna status da permissão do microfone. |
-| `libraryPermission`    | `{ status: "authorized" / "denied" / "notDetermined" }` | Retorna status da permissão da biblioteca. |
-
-
-**Exemplo JavaScript para receber:**
-
-```js
-window.nativeBridge = {
-  onMessage: function(message) {
-    if (message.command === "microphonePermission") {
-      const status = message.payload.status; // "authorized", "denied", "notDetermined"
-      console.log("Microphone permission status:", status);
+```swift
+extension ViewController: SilverguardNavigationHandlerDelegate {
+    func onPopViewController(with command: String?) {
+        print("Usuário retornou do fluxo:", command ?? "404")
     }
-  }
-};
+}
 ```
 
----
+## 📄 Licença
 
-**Status possíveis (`PermissionStatus`):**
-
-- `authorized`
-- `denied`
-- `notDetermined`
-
----
+Este SDK é distribuído sob a licença proprietária da **Silverguard**. O uso é restrito a clientes autorizados.
