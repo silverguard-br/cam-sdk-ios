@@ -101,7 +101,7 @@ O SDK oferece **dois fluxos principais**:
 
 ```swift
 let controller = SilverguardCAM.start(
-    with: dictModel, // Instância de DICTModel
+    with: DICTModel,
     navigationHandler: self // Delegate para eventos de navegação
 )
 navigationController?.pushViewController(controller, animated: true)
@@ -111,7 +111,7 @@ navigationController?.pushViewController(controller, animated: true)
 
 ```swift
 let controller = SilverguardCAM.start(
-    for: dictListModel, // Instância de DICTListModel
+    for: DICTListModel,
     navigationHandler: self
 )
 navigationController?.pushViewController(controller, animated: true)
