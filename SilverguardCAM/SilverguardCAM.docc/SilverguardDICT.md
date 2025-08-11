@@ -40,7 +40,7 @@ O app nativo envia respostas e notificações de status de permissões ou de nav
 |------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
 | `microphonePermission` | `{ status: "authorized" / "denied" / "notDetermined" }`                                             | Status da permissão do microfone.                                         |
 | `libraryPermission`    | `{ status: "authorized" / "denied" / "notDetermined" }`                                             | Status da permissão da biblioteca.                                        |
-| `back`                 | `{ payload: { origin: "ORIGIN DE ONDE RETORNOU" } }`                                                | Informa que o usuário retornou para a tela anterior, incluindo a origem do fluxo. |
+| `back`                 | `{ origin: "ORIGIN" }`                                                | Informa que o usuário retornou para a tela anterior, incluindo a origem do fluxo. |
 
 **Exemplo para receber mensagens no JavaScript:**
 
