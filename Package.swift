@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "SilverguardCAM",
-    defaultLocalization: "pt", // Opcional, define a linguagem padrão dos recursos
+    defaultLocalization: "pt",
     platforms: [
         .iOS(.v13)
     ],

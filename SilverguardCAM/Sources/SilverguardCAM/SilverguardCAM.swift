@@ -32,6 +32,12 @@ public final class SilverguardCAM: SilverguardCAMConfiguring, SilverguardCAMFact
     }
     
     @discardableResult
+    public static func setEnvironment(_ environment: BaseURL) -> SilverguardCAMProtocol.Type {
+        Environment.base = environment
+        return SilverguardCAM.self
+    }
+    
+    @discardableResult
     public static func setStyle(colors: any ColorsProtocol) -> SilverguardCAMProtocol.Type {
         Stylesheet.setStyle(color: colors)
         return SilverguardCAM.self

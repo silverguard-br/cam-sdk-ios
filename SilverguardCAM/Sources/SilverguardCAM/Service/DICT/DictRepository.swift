@@ -7,7 +7,7 @@ internal enum DictRepository: NetworkTask {
 
 extension DictRepository {
     var baseURL: NetworkBaseURL {
-        guard let url = URL(string: BaseURL.debug.rawValue) else {
+        guard let url = URL(string: Environment.base.rawValue) else {
             fatalError("Base URL Invalid")
         }
         return .url(url)
