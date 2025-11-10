@@ -1,4 +1,4 @@
-struct FeedbackDTO: Codable {
+struct FeedbackDTO: Codable, Equatable {
     let title: String
     let message: String
     let buttonTitle: String
