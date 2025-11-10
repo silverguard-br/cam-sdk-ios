@@ -13,7 +13,7 @@ Se ainda não tiver o CocoaPods instalado, siga as instruções em: [https://coc
 Adicione no seu `Podfile`:
 
 ```ruby
-pod 'SilverguardCAM', :git => 'https://github.com/silverguard-br/cam-sdk-ios.git', :tag => '1.0.1'
+pod 'SilverguardCAM', :git => 'https://github.com/silverguard-br/cam-sdk-ios.git', :tag => '1.1.0'
 ```
 
 E execute:
@@ -33,7 +33,7 @@ pod install
 https://github.com/silverguard-br/cam-sdk-ios.git
 ```
 
-3. Escolha a versão **`1.0.1` ou superior**  
+3. Escolha a versão **`1.1.0` ou superior**  
 4. Adicione ao seu **target**.
 
 ---
