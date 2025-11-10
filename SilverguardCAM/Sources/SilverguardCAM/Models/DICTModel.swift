@@ -17,7 +17,9 @@ public struct DICTModel: BodyEncodable {
     let clientSince: String
     let clientBirth: String
     let autofraudRisk: Bool
-
+    let reporterBranchNumber: Int?
+    let reporterAccountNumber: Int?
+    
     public init(
         transactionId: String,
         transactionAmount: Double,
@@ -34,7 +36,9 @@ public struct DICTModel: BodyEncodable {
         clientId: String,
         clientSince: String,
         clientBirth: String,
-        autofraudRisk: Bool
+        autofraudRisk: Bool,
+        reporterBranchNumber: Int? = nil,
+        reporterAccountNumber: Int? = nil
     ) {
         self.transactionId = transactionId
         self.transactionAmount = transactionAmount
@@ -52,5 +56,7 @@ public struct DICTModel: BodyEncodable {
         self.clientSince = clientSince
         self.clientBirth = clientBirth
         self.autofraudRisk = autofraudRisk
+        self.reporterAccountNumber = reporterAccountNumber
+        self.reporterBranchNumber = reporterBranchNumber
     }
 }
