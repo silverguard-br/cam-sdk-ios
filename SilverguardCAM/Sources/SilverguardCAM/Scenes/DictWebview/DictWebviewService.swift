@@ -3,9 +3,11 @@ protocol DictWebviewServiceProtocol: AnyObject {
 }
 
 final class DictWebviewService: DictWebviewServiceProtocol {
-    lazy var network = NetworkManager<DictRepository>()
+    private let network: NetworkManager<DictRepository>
     
-    init() {}
+    init(network: NetworkManager<DictRepository> = NetworkManager()) {
+        self.network = network
+    }
     
     func request(
         endpoint: DictRepository,
