@@ -13,7 +13,7 @@ Se ainda não tiver o CocoaPods instalado, siga as instruções em: [https://coc
 Adicione no seu `Podfile`:
 
 ```ruby
-pod 'SilverguardCAM', :git => 'https://github.com/silverguard-br/cam-sdk-ios.git', :tag => '1.0.0'
+pod 'SilverguardCAM', :git => 'https://github.com/silverguard-br/cam-sdk-ios.git', :tag => '1.1.0'
 ```
 
 E execute:
@@ -33,7 +33,7 @@ pod install
 https://github.com/silverguard-br/cam-sdk-ios.git
 ```
 
-3. Escolha a versão **`1.0.0` ou superior**  
+3. Escolha a versão **`1.1.0` ou superior**  
 4. Adicione ao seu **target**.
 
 ---
@@ -53,7 +53,9 @@ import SilverguardCAM
 Antes de iniciar qualquer fluxo, configure o SDK com sua **API Key**:
 
 ```swift
-SilverguardCAM.configure(with: "SUA_API_KEY")
+SilverguardCAM
+    .configure(with: "SUA_API_KEY")
+    .setEnvironment(.production) // .debug (padrão), .staging ou .production
 ```
 
 ---
@@ -87,6 +89,7 @@ Aplicando o estilo:
 ```swift
 SilverguardCAM
     .configure(with: "SUA_API_KEY")
+    .setEnvironment(.production)
     .setStyle(colors: CustomColors())
     .setFonts(fonts: CustomFonts())
 ```
@@ -140,7 +143,9 @@ let model = DICTModel(
     clientId: "CLI_456789",
     clientSince: "2020-01-15",
     clientBirth: "1985-03-22",
-    autofraudRisk: true
+    autofraudRisk: true,
+    reporterBranchNumber: 1234, // Opcional
+    reporterAccountNumber: 567890 // Opcional
 )
 ```
 
@@ -148,7 +153,9 @@ let model = DICTModel(
 
 ```swift
 let listModel = DICTListModel(
-    reporterClientId: "12345678901234"
+    reporterClientId: "12345678901234",
+    reporterBranchNumber: 1234, // Opcional
+    reporterAccountNumber: 567890 // Opcional
 )
 ```
 
@@ -165,6 +172,24 @@ extension ViewController: SilverguardNavigationHandlerDelegate {
     }
 }
 ```
+
+---
+
+### 7. Permissões de privacidade (Obrigatório)
+
+Adicione no `Info.plist` do seu projeto as chaves abaixo com a mensagem utilizada na sua aplicação. Sem elas, o app encerra ao solicitar as permissões.
+
+- `NSMicrophoneUsageDescription`
+- `NSPhotoLibraryUsageDescription`
+
+O SDK solicita as permissões de microfone e biblioteca ao receber os comandos correspondentes do fluxo web. Caso o usuário negue, utilize o comando `openSettings` (veja a seção de integração) para direcioná-lo às configurações do aplicativo.
+
+---
+
+## ✅ Requisitos
+
+- iOS 13 ou superior
+- Conexão HTTPS com os domínios `test.cam.sosgolpe.com.br` e `cam.sosgolpe.com.br`
 
 ## 📄 Licença
 
