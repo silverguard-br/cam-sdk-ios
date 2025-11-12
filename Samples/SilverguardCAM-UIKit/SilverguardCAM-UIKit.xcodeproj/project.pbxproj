@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE74045F2EC415B800FFCFC5 /* SilverguardCAM in Frameworks */ = {isa = PBXBuildFile; productRef = CE74045E2EC415B800FFCFC5 /* SilverguardCAM */; };
+		CE7E0B712EC4285600CB2C56 /* SilverguardCAM in Frameworks */ = {isa = PBXBuildFile; productRef = CE7E0B702EC4285600CB2C56 /* SilverguardCAM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE74045F2EC415B800FFCFC5 /* SilverguardCAM in Frameworks */,
+				CE7E0B712EC4285600CB2C56 /* SilverguardCAM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 			);
 			name = "SilverguardCAM-UIKit";
 			packageProductDependencies = (
-				CE74045E2EC415B800FFCFC5 /* SilverguardCAM */,
+				CE7E0B702EC4285600CB2C56 /* SilverguardCAM */,
 			);
 			productName = "SilverguardCAM-UIKit";
 			productReference = CE7404452EC4150A00FFCFC5 /* SilverguardCAM-UIKit.app */;
@@ -114,7 +114,7 @@
 			mainGroup = CE74043C2EC4150900FFCFC5;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				CE74045D2EC415B800FFCFC5 /* XCRemoteSwiftPackageReference "cam-sdk-ios" */,
+				CE7E0B6F2EC4285600CB2C56 /* XCRemoteSwiftPackageReference "cam-sdk-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CE7404462EC4150A00FFCFC5 /* Products */;
@@ -348,7 +348,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CE74045D2EC415B800FFCFC5 /* XCRemoteSwiftPackageReference "cam-sdk-ios" */ = {
+		CE7E0B6F2EC4285600CB2C56 /* XCRemoteSwiftPackageReference "cam-sdk-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/silverguard-br/cam-sdk-ios.git";
 			requirement = {
@@ -359,9 +359,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CE74045E2EC415B800FFCFC5 /* SilverguardCAM */ = {
+		CE7E0B702EC4285600CB2C56 /* SilverguardCAM */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CE74045D2EC415B800FFCFC5 /* XCRemoteSwiftPackageReference "cam-sdk-ios" */;
+			package = CE7E0B6F2EC4285600CB2C56 /* XCRemoteSwiftPackageReference "cam-sdk-ios" */;
 			productName = SilverguardCAM;
 		};
 /* End XCSwiftPackageProductDependency section */

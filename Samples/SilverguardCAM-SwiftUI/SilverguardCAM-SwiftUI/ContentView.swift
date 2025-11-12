@@ -9,8 +9,10 @@ import SwiftUI
 import SilverguardCAM
 
 enum FlowDestination: Hashable {
-    case full
-    case minimal
+    case contestationFull
+    case contestationMinimal
+    case listFull
+    case listMinimal
 }
 
 struct ContentView: View {
@@ -29,16 +31,30 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(path: $path) {
             ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 12) {
-                    Button("Iniciar contestação") {
-                        path.append(.full)
-                    }
-                    .buttonStyle(SilverguardButtonStyle(colors: colors, fonts: fonts))
+                VStack(alignment: .leading, spacing: 24) {
+                    SectionView(title: "Iniciar Contestação", colors: colors) {
+                        Button("Modelo completo") {
+                            path.append(.contestationFull)
+                        }
+                        .buttonStyle(SilverguardButtonStyle(colors: colors, fonts: fonts))
 
-                    Button("Iniciar contestação (campos obrigatórios)") {
-                        path.append(.minimal)
+                        Button("Modelo (campos obrigatórios)") {
+                            path.append(.contestationMinimal)
+                        }
+                        .buttonStyle(SilverguardButtonStyle(colors: colors, fonts: fonts))
                     }
-                    .buttonStyle(SilverguardButtonStyle(colors: colors, fonts: fonts))
+
+                    SectionView(title: "Listar Contestações", colors: colors) {
+                        Button("Lista completa") {
+                            path.append(.listFull)
+                        }
+                        .buttonStyle(SilverguardButtonStyle(colors: colors, fonts: fonts))
+
+                        Button("Lista (campos obrigatórios)") {
+                            path.append(.listMinimal)
+                        }
+                        .buttonStyle(SilverguardButtonStyle(colors: colors, fonts: fonts))
+                    }
                 }
                 .padding(20)
             }
@@ -108,6 +124,24 @@ struct SilverguardButtonStyle: ButtonStyle {
     }
 }
 
+struct SectionView<Content: View>: View {
+    let title: String
+    let colors: ColorsProtocol
+    @ViewBuilder let content: () -> Content
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(title)
+                .font(.system(size: 16, weight: .semibold))
+                .foregroundColor(Color(uiColor: colors.label))
+
+            VStack(spacing: 12) {
+                content()
+            }
+        }
+    }
+}
+
 struct SilverguardFlowView: UIViewControllerRepresentable {
     let flow: FlowDestination
     let onFinish: (String?) -> Void
@@ -118,14 +152,24 @@ struct SilverguardFlowView: UIViewControllerRepresentable {
 
     func makeUIViewController(context: Context) -> UIViewController {
         switch flow {
-        case .full:
+        case .contestationFull:
             return SilverguardCAM.start(
                 with: SampleDataFactory.makeFullModel(),
                 navigationHandler: context.coordinator
             )
-        case .minimal:
+        case .contestationMinimal:
             return SilverguardCAM.start(
                 with: SampleDataFactory.makeMinimalModel(),
+                navigationHandler: context.coordinator
+            )
+        case .listFull:
+            return SilverguardCAM.start(
+                for: SampleDataFactory.makeFullListModel(),
+                navigationHandler: context.coordinator
+            )
+        case .listMinimal:
+            return SilverguardCAM.start(
+                for: SampleDataFactory.makeMinimalListModel(),
                 navigationHandler: context.coordinator
             )
         }

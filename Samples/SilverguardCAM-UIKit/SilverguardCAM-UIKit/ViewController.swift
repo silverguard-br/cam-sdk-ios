@@ -24,10 +24,19 @@ final class ViewController: UIViewController {
     }()
 
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [startFullButton, startMinimalButton])
+        let dictSection = makeSection(
+            title: "Iniciar Contestação",
+            buttons: [startFullButton, startMinimalButton]
+        )
+        let listSection = makeSection(
+            title: "Listar Contestações",
+            buttons: [startListFullButton, startListMinimalButton]
+        )
+
+        let stackView = UIStackView(arrangedSubviews: [dictSection, listSection])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 12
+        stackView.spacing = 24
         return stackView
     }()
 
@@ -50,6 +59,28 @@ final class ViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
         button.addTarget(self, action: #selector(didTapStartMinimal), for: .touchUpInside)
+        return button
+    }()
+
+    private lazy var startListFullButton: UIButton = {
+        var configuration = UIButton.Configuration.filled()
+        configuration.title = "Abrir lista completa"
+        configuration.cornerStyle = .medium
+        let button = UIButton(configuration: configuration, primaryAction: nil)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        button.addTarget(self, action: #selector(didTapListFull), for: .touchUpInside)
+        return button
+    }()
+
+    private lazy var startListMinimalButton: UIButton = {
+        var configuration = UIButton.Configuration.filled()
+        configuration.title = "Abrir lista (campos obrigatórios)"
+        configuration.cornerStyle = .medium
+        let button = UIButton(configuration: configuration, primaryAction: nil)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        button.addTarget(self, action: #selector(didTapListMinimal), for: .touchUpInside)
         return button
     }()
 
@@ -119,6 +150,22 @@ final class ViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
 
+    private func makeSection(title: String, buttons: [UIView]) -> UIStackView {
+        let titleLabel = UILabel()
+        titleLabel.text = title
+        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        titleLabel.textColor = .label
+
+        let buttonStack = UIStackView(arrangedSubviews: buttons)
+        buttonStack.axis = .vertical
+        buttonStack.spacing = 12
+
+        let sectionStack = UIStackView(arrangedSubviews: [titleLabel, buttonStack])
+        sectionStack.axis = .vertical
+        sectionStack.spacing = 8
+        return sectionStack
+    }
+
     private func applyCurrentStyle() {
         let colors: ColorsProtocol = isDefaultStyle ? DefaultColors() : CustomColors()
         let fonts: FontsProtocol = isDefaultStyle ? DefaultFonts() : CustomFonts()
@@ -127,10 +174,10 @@ final class ViewController: UIViewController {
             .setFonts(fonts: fonts)
         view.backgroundColor = colors.background
         contentView.backgroundColor = colors.background
-        startFullButton.configuration?.baseBackgroundColor = colors.primary
-        startFullButton.configuration?.baseForegroundColor = colors.buttonTitle
-        startMinimalButton.configuration?.baseBackgroundColor = colors.primary
-        startMinimalButton.configuration?.baseForegroundColor = colors.buttonTitle
+        [startFullButton, startMinimalButton, startListFullButton, startListMinimalButton].forEach {
+            $0.configuration?.baseBackgroundColor = colors.primary
+            $0.configuration?.baseForegroundColor = colors.buttonTitle
+        }
     }
 
     private func applyNavStyle() {
@@ -150,6 +197,22 @@ final class ViewController: UIViewController {
     @objc private func didTapStartMinimal() {
         let controller = SilverguardCAM.start(
             with: SampleDataFactory.makeMinimalModel(),
+            navigationHandler: self
+        )
+        navigationController?.pushViewController(controller, animated: true)
+    }
+
+    @objc private func didTapListFull() {
+        let controller = SilverguardCAM.start(
+            for: SampleDataFactory.makeFullListModel(),
+            navigationHandler: self
+        )
+        navigationController?.pushViewController(controller, animated: true)
+    }
+
+    @objc private func didTapListMinimal() {
+        let controller = SilverguardCAM.start(
+            for: SampleDataFactory.makeMinimalListModel(),
             navigationHandler: self
         )
         navigationController?.pushViewController(controller, animated: true)

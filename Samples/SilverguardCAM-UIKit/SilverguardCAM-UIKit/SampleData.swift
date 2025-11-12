@@ -20,8 +20,8 @@ enum SampleDataFactory {
             clientSince: "2020-01-15",
             clientBirth: "1985-03-22",
             autofraudRisk: true,
-            reporterBranchNumber: nil,
-            reporterAccountNumber: nil
+            reporterBranchNumber: 1234,
+            reporterAccountNumber: 56789
         )
     }
 
@@ -35,6 +35,20 @@ enum SampleDataFactory {
             contestedParticipantId: "123456",
             counterpartyClientName: "John Doe",
             counterpartyClientId: "12345678901"
+        )
+    }
+
+    static func makeFullListModel() -> DICTListModel {
+        DICTListModel(
+            reporterClientId: "12345678901234",
+            reporterBranchNumber: 1234,
+            reporterAccountNumber: 56789
+        )
+    }
+
+    static func makeMinimalListModel() -> DICTListModel {
+        DICTListModel(
+            reporterClientId: "12345678901234"
         )
     }
 
