@@ -1,2 +1,30 @@
-SilverguardCAM.xcodeproj/project.xcworkspace/xcuserdata/msanada.xcuserdatad/UserInterfaceState.xcuserstate
-SilverguardCAM.xcodeproj/project.xcworkspace/xcuserdata/msanada.xcuserdatad/UserInterfaceState.xcuserstate
+### Xcode ###
+*.xcworkspace/xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+
+### Swift Package Manager ###
+.swiftpm/
+.build/
+Package.resolved
+
+### CocoaPods ###
+Pods/
+.cocoapods/
+
+### Carthage ###
+Carthage/
+
+### Fastlane ###
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output/
+
+### General ###
+*.DS_Store
+.idea/
+.vscode/
+.env
+
