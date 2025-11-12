@@ -13,7 +13,7 @@ Se ainda não tiver o CocoaPods instalado, siga as instruções em: [https://coc
 Adicione no seu `Podfile`:
 
 ```ruby
-pod 'SilverguardCAM', :git => 'https://github.com/silverguard-br/cam-sdk-ios.git', :tag => '1.1.0'
+pod 'SilverguardCAM', :git => 'https://github.com/silverguard-br/cam-sdk-ios.git', :tag => '1.2.0'
 ```
 
 E execute:
@@ -33,7 +33,7 @@ pod install
 https://github.com/silverguard-br/cam-sdk-ios.git
 ```
 
-3. Escolha a versão **`1.1.0` ou superior**  
+3. Escolha a versão **`1.2.0` ou superior**  
 4. Adicione ao seu **target**.
 
 ---
@@ -172,6 +172,29 @@ extension ViewController: SilverguardNavigationHandlerDelegate {
     }
 }
 ```
+
+---
+
+## 🧪 Samples
+
+Explore os exemplos incluídos para ver integrações prontas com UIKit e SwiftUI.
+
+### Requisitos
+
+- Xcode 15 ou superior
+- Dispositivo ou simulador iOS 13+
+
+### Passo a passo
+
+1. Abra o projeto desejado no Xcode:  
+   - UIKit: `Samples/SilverguardCAM-UIKit/SilverguardCAM-UIKit.xcodeproj`  
+   - SwiftUI: `Samples/SilverguardCAM-SwiftUI/SilverguardCAM-SwiftUI.xcodeproj`
+2. No arquivo `Samples/SilverguardCAM-UIKit/SilverguardCAM-UIKit/ViewController.swift` (UIKit) ou `Samples/SilverguardCAM-SwiftUI/SilverguardCAM-SwiftUI/ContentView.swift` (SwiftUI), ajuste a chamada `configure(with: "SUA_API_KEY")` para utilizar a sua API Key.
+3. Se necessário, personalize os dados de exemplo em `SampleData.swift`.
+4. Selecione o esquema padrão do projeto aberto e execute com `Cmd + R`.
+5. Se a dependência `SilverguardCAM` apresentar erro ao resolver via SPM, abra **File > Packages > Update to Latest Package Versions** no Xcode ou remova e adicione novamente o pacote (`File > Packages > Reset Package Caches`) para forçar a atualização.
+
+Os projetos já estão configurados para consumir o pacote `SilverguardCAM` via Swift Package Manager, não sendo necessário nenhum passo adicional de instalação.
 
 ---
 
