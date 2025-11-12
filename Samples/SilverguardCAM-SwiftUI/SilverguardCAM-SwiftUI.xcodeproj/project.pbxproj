@@ -265,6 +265,9 @@
 				DEVELOPMENT_TEAM = 26VQM6YHFT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Precisamos de acesso a camera";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Precisamos de acesso ao seu microfone";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Precisamo de acesso a sua galeria";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -293,6 +296,9 @@
 				DEVELOPMENT_TEAM = 26VQM6YHFT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Precisamos de acesso a camera";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Precisamos de acesso ao seu microfone";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Precisamo de acesso a sua galeria";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

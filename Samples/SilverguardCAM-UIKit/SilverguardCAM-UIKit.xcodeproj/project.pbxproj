@@ -157,6 +157,7 @@
 				DEVELOPMENT_TEAM = 26VQM6YHFT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SilverguardCAM-UIKit/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Precisamos de acesso ao seu microfone";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
@@ -185,6 +186,7 @@
 				DEVELOPMENT_TEAM = 26VQM6YHFT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SilverguardCAM-UIKit/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Precisamos de acesso ao seu microfone";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
