@@ -9,6 +9,8 @@ public protocol SilverguardCAMConfiguring {
     static func setStyle(colors: any ColorsProtocol) -> SilverguardCAMProtocol.Type
     @discardableResult
     static func setFonts(fonts: any FontsProtocol) -> SilverguardCAMProtocol.Type
+    @discardableResult
+    static func setEnvironment(_ environment: BaseURL) -> SilverguardCAMProtocol.Type
 }
 
 public protocol SilverguardCAMFactory {

@@ -4,19 +4,19 @@ public struct DICTModel: BodyEncodable {
     let transactionId: String
     let transactionAmount: Double
     let transactionTime: String
-    let transactionDescription: String
+    let transactionDescription: String?
     let reporterClientName: String
     let reporterClientId: String
     let contestedParticipantId: String
     let counterpartyClientName: String
     let counterpartyClientId: String
-    let counterpartyClientKey: String
-    let protocolId: String
-    let pixAuto: Bool
-    let clientId: String
-    let clientSince: String
-    let clientBirth: String
-    let autofraudRisk: Bool
+    let counterpartyClientKey: String?
+    let protocolId: String?
+    let pixAuto: Bool?
+    let clientId: String?
+    let clientSince: String?
+    let clientBirth: String?
+    let autofraudRisk: Bool?
     let reporterBranchNumber: Int?
     let reporterAccountNumber: Int?
     
@@ -24,19 +24,19 @@ public struct DICTModel: BodyEncodable {
         transactionId: String,
         transactionAmount: Double,
         transactionTime: String,
-        transactionDescription: String,
+        transactionDescription: String? = nil,
         reporterClientName: String,
         reporterClientId: String,
         contestedParticipantId: String,
         counterpartyClientName: String,
         counterpartyClientId: String,
-        counterpartyClientKey: String,
-        protocolId: String,
-        pixAuto: Bool,
-        clientId: String,
-        clientSince: String,
-        clientBirth: String,
-        autofraudRisk: Bool,
+        counterpartyClientKey: String? = nil,
+        protocolId: String? = nil,
+        pixAuto: Bool? = nil,
+        clientId: String? = nil,
+        clientSince: String? = nil,
+        clientBirth: String? = nil,
+        autofraudRisk: Bool? = nil,
         reporterBranchNumber: Int? = nil,
         reporterAccountNumber: Int? = nil
     ) {
