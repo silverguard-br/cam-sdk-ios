@@ -15,11 +15,12 @@ window.webkit.messageHandlers.bridge.postMessage({
 });
 ```
 
-| Comando             | Payload  | Descrição                              |
-|---------------------|----------|----------------------------------------|
-| `back`              | nenhum   | Retorna para a tela anterior. Ao retornar, o app enviará também a origem do fluxo (ver **Swift → JavaScript** abaixo). |
-| `askForMicrophone`  | nenhum   | Solicita permissão de microfone.       |
-| `askForLibrary`     | nenhum   | Solicita permissão de biblioteca.      |
+| Comando            | Payload | Descrição                                                                                                              |
+| ------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `back`             | nenhum  | Retorna para a tela anterior. Ao retornar, o app enviará também a origem do fluxo (ver **Swift → JavaScript** abaixo). |
+| `askForMicrophone` | nenhum  | Solicita permissão de microfone.                                                                                       |
+| `askForLibrary`    | nenhum  | Solicita permissão de biblioteca.                                                                                      |
+| `askForCamera`     | nenhum  | Solicita permissão de câmera.                                                                                          |
 
 **Exemplo:**
 
@@ -36,11 +37,12 @@ window.webkit.messageHandlers.bridge.postMessage({
 
 O app nativo envia respostas e notificações de status de permissões ou de navegação.
 
-| Comando                | Payload                                                                                             | Descrição                                                                 |
-|------------------------|-----------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
-| `microphonePermission` | `{ status: "authorized" / "denied" / "notDetermined" }`                                             | Status da permissão do microfone.                                         |
-| `libraryPermission`    | `{ status: "authorized" / "denied" / "notDetermined" }`                                             | Status da permissão da biblioteca.                                        |
-| `back`                 | `{ origin: "ORIGIN" }`                                                | Informa que o usuário retornou para a tela anterior, incluindo a origem do fluxo. |
+| Comando                | Payload                                                 | Descrição                                                                         |
+| ---------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `microphonePermission` | `{ status: "authorized" / "denied" / "notDetermined" }` | Status da permissão do microfone.                                                 |
+| `libraryPermission`    | `{ status: "authorized" / "denied" / "notDetermined" }` | Status da permissão da biblioteca.                                                |
+| `cameraPermission`     | `{ status: "authorized" / "denied" / "notDetermined" }` | Status da permissão da câmera.                                                    |
+| `back`                 | `{ origin: "ORIGIN" }`                                  | Informa que o usuário retornou para a tela anterior, incluindo a origem do fluxo. |
 
 **Exemplo para receber mensagens no JavaScript:**
 
