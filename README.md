@@ -204,8 +204,9 @@ Adicione no `Info.plist` do seu projeto as chaves abaixo com a mensagem utilizad
 
 - `NSMicrophoneUsageDescription`
 - `NSPhotoLibraryUsageDescription`
+- `NSCameraUsageDescription`
 
-O SDK solicita as permissões de microfone e biblioteca ao receber os comandos correspondentes do fluxo web. Caso o usuário negue, utilize o comando `openSettings` (veja a seção de integração) para direcioná-lo às configurações do aplicativo.
+O SDK solicita as permissões de microfone, biblioteca e câmera ao receber os comandos correspondentes do fluxo web. Caso o usuário negue, utilize o comando `openSettings` (veja a seção de integração) para direcioná-lo às configurações do aplicativo.
 
 ---
 
