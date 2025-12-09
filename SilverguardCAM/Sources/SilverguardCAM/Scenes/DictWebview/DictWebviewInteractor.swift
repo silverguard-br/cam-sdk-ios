@@ -56,6 +56,8 @@ extension DictWebviewInteractor: DictWebviewInteractorProtocol {
             askPermission(for: .microphone, answering: .microphonePermission)
         case .askForLibrary:
             askPermission(for: .library, answering: .libraryPermission)
+        case .askForCamera:
+            askPermission(for: .camera, answering: .cameraPermission)
         case .openSettings:
             permissionService.openSettings()
         }
