@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CEAC70E32ED8C05C00509E2C /* SilverguardCAM in Frameworks */ = {isa = PBXBuildFile; productRef = CEAC70E22ED8C05C00509E2C /* SilverguardCAM */; };
+		CEE3F65D2EE79E6200614EAB /* SilverguardCAM in Frameworks */ = {isa = PBXBuildFile; productRef = CEE3F65C2EE79E6200614EAB /* SilverguardCAM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEAC70E32ED8C05C00509E2C /* SilverguardCAM in Frameworks */,
+				CEE3F65D2EE79E6200614EAB /* SilverguardCAM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,7 +70,7 @@
 			);
 			name = "SilverguardCAM-SwiftUI";
 			packageProductDependencies = (
-				CEAC70E22ED8C05C00509E2C /* SilverguardCAM */,
+				CEE3F65C2EE79E6200614EAB /* SilverguardCAM */,
 			);
 			productName = "SilverguardCAM-SwiftUI";
 			productReference = CE74042E2EC414EA00FFCFC5 /* SilverguardCAM-SwiftUI.app */;
@@ -101,7 +101,7 @@
 			mainGroup = CE7404252EC414EA00FFCFC5;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				CEAC70E12ED8C05C00509E2C /* XCLocalSwiftPackageReference "../../../SilverguardCAM" */,
+				CEE3F65B2EE79E6200614EAB /* XCRemoteSwiftPackageReference "cam-sdk-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = CE74042F2EC414EA00FFCFC5 /* Products */;
@@ -340,16 +340,21 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		CEAC70E12ED8C05C00509E2C /* XCLocalSwiftPackageReference "../../../SilverguardCAM" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = ../../../SilverguardCAM;
+/* Begin XCRemoteSwiftPackageReference section */
+		CEE3F65B2EE79E6200614EAB /* XCRemoteSwiftPackageReference "cam-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/silverguard-br/cam-sdk-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CEAC70E22ED8C05C00509E2C /* SilverguardCAM */ = {
+		CEE3F65C2EE79E6200614EAB /* SilverguardCAM */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = CEE3F65B2EE79E6200614EAB /* XCRemoteSwiftPackageReference "cam-sdk-ios" */;
 			productName = SilverguardCAM;
 		};
 /* End XCSwiftPackageProductDependency section */
