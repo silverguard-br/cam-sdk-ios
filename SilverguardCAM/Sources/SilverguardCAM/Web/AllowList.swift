@@ -4,7 +4,8 @@ final class AllowList {
     private static func getHosts() -> [String] {
         [
             "test.cam.sosgolpe.com.br",
-            "cam.sosgolpe.com.br"
+            "cam.sosgolpe.com.br",
+            "cam.silverguard.com.br"
         ]
     }
     
