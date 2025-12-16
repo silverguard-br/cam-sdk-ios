@@ -5,6 +5,7 @@ protocol DictWebviewCoordinatorProtocol: AnyObject {
     func stopLoading(_ completion: (() -> Void)?)
     func presentFeedback(_ dto: FeedbackDTO)
     func back(from origin: String?)
+    func navigateToTransactionsList()
 }
 
 final class DictWebviewCoordinator: DictWebviewCoordinatorProtocol {
@@ -54,5 +55,16 @@ final class DictWebviewCoordinator: DictWebviewCoordinatorProtocol {
         }
         controller?.navigationController?.popViewController(animated: true)
         navigationHandler?.onPopViewController(with: origin)
+    }
+    
+    func navigateToTransactionsList() {
+        if controller?.presentingViewController != nil {
+            controller?.dismiss(animated: false) {
+                self.navigationHandler?.navigateToTransactionsList()
+            }
+            return
+        }
+        controller?.navigationController?.popViewController(animated: false)
+        navigationHandler?.navigateToTransactionsList()
     }
 }

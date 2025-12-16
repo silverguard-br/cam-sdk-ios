@@ -5,6 +5,7 @@ protocol DictWebviewPresenterProtocol: AnyObject {
     func load(webview: URL)
     func error(_ error: NetworkError)
     func back(from origin: String?)
+    func navigateToTransactionsList()
     func sendCommand(_ command: JSAnswer, payload: [String: String]?)
 }
 
@@ -14,6 +15,10 @@ final class DictWebviewPresenter: DictWebviewPresenterProtocol {
     
     public init(coordinator: DictWebviewCoordinatorProtocol) {
         self.coordinator = coordinator
+    }
+    
+    func navigateToTransactionsList() {
+        coordinator.navigateToTransactionsList()
     }
     
     func back(from origin: String?) {
