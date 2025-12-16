@@ -38,6 +38,41 @@ struct DictWebviewCoordinatorTests {
             #expect(navigationHandler.popCommands == ["origin"])
         }
     }
+
+    @Test
+    func navigateToTransactionsList_dismissesWhenPresented() async {
+        let navigationHandler = NavigationHandlerSpy()
+        let sut = DictWebviewCoordinator(navigationHandler: navigationHandler)
+        let controller = PresentedController()
+        controller.presentingController = UIViewController()
+        sut.controller = controller
+
+        await awaitResult { continuation in
+            controller.onDismiss = {
+                continuation(())
+            }
+            sut.navigateToTransactionsList()
+        }
+
+        #expect(controller.dismissCallCount == 1)
+        #expect(navigationHandler.navigateToTransactionsListCallCount == 1)
+    }
+
+    @Test
+    func navigateToTransactionsList_popsNavigationController() async {
+        await MainActor.run {
+            let navigationHandler = NavigationHandlerSpy()
+            let sut = DictWebviewCoordinator(navigationHandler: navigationHandler)
+            let controller = UIViewController()
+            let navigation = NavigationControllerSpy(rootViewController: controller)
+            sut.controller = controller
+
+            sut.navigateToTransactionsList()
+
+            #expect(navigation.popCallCount == 1)
+            #expect(navigationHandler.navigateToTransactionsListCallCount == 1)
+        }
+    }
 }
 
 private final class PresentedController: UIViewController {

@@ -150,6 +150,15 @@ struct DictWebviewInteractorTests {
         #expect(presenter.sentCommands[1].1?["status"] == PermissionStatus.denied.rawValue)
         #expect(presenter.sentCommands[2].1?["status"] == PermissionStatus.notDetermined.rawValue)
     }
+
+    @Test
+    func resolve_navigateToTransactionsList_callsPresenter() {
+        let (sut, presenter, _, _) = makeSUT()
+
+        sut.resolve(command: .navigateToTransactionsList, data: nil)
+
+        #expect(presenter.navigateToTransactionsListCallCount == 1)
+    }
 }
 
 

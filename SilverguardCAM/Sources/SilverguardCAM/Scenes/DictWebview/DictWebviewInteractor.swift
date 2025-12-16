@@ -52,6 +52,8 @@ extension DictWebviewInteractor: DictWebviewInteractorProtocol {
         case .back:
             let origin = data?["origin"]
             presenter.back(from: origin)
+        case .navigateToTransactionsList:
+            presenter.navigateToTransactionsList()
         case .askForMicrophone:
             askPermission(for: .microphone, answering: .microphonePermission)
         case .askForLibrary:

@@ -1,5 +1,6 @@
 enum JSCommand: String, CaseIterable {
     case back
+    case navigateToTransactionsList = "navigateToTransactionsList"
     case askForMicrophone = "requestMicrophonePermission"
     case askForLibrary = "requestLibraryPermission"
     case askForCamera = "requestCameraPermission"

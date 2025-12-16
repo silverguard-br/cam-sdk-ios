@@ -10,6 +10,7 @@ final class DictWebviewPresenterSpy: DictWebviewPresenterProtocol {
     var receivedErrors: [NetworkError] = []
     var backOrigins: [String?] = []
     var sentCommands: [(JSAnswer, [String: String]?)] = []
+    var navigateToTransactionsListCallCount = 0
 
     func loading(_ loading: Bool) {
         loadingStates.append(loading)
@@ -25,6 +26,10 @@ final class DictWebviewPresenterSpy: DictWebviewPresenterProtocol {
 
     func back(from origin: String?) {
         backOrigins.append(origin)
+    }
+
+    func navigateToTransactionsList() {
+        navigateToTransactionsListCallCount += 1
     }
 
     func sendCommand(_ command: JSAnswer, payload: [String: String]?) {
@@ -77,6 +82,7 @@ final class DictWebviewCoordinatorSpy: DictWebviewCoordinatorProtocol {
     var stoppedLoadingCount = 0
     var presentedFeedback: [FeedbackDTO] = []
     var backOrigins: [String?] = []
+    var navigateToTransactionsListCallCount = 0
 
     func startLoading(_ dto: LoadingDTO) {
         startedLoading.append(dto)
@@ -93,6 +99,10 @@ final class DictWebviewCoordinatorSpy: DictWebviewCoordinatorProtocol {
 
     func back(from origin: String?) {
         backOrigins.append(origin)
+    }
+
+    func navigateToTransactionsList() {
+        navigateToTransactionsListCallCount += 1
     }
 }
 
@@ -111,9 +121,14 @@ final class DictWebviewViewControllerSpy: DictWebviewViewControllerProtocol {
 
 final class NavigationHandlerSpy: SilverguardNavigationHandlerDelegate {
     var popCommands: [String?] = []
+    var navigateToTransactionsListCallCount = 0
 
     func onPopViewController(with command: String?) {
         popCommands.append(command)
+    }
+
+    func navigateToTransactionsList() {
+        navigateToTransactionsListCallCount += 1
     }
 }
 
