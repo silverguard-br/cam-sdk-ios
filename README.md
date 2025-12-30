@@ -173,6 +173,27 @@ extension ViewController: SilverguardNavigationHandlerDelegate {
 }
 ```
 
+#### Navegação para lista de transações
+
+O SDK também permite que o fluxo web solicite navegação para a lista de transações. Para capturar esse evento, implemente o método `navigateToTransactionsList()`:
+
+```swift
+extension ViewController: SilverguardNavigationHandlerDelegate {
+    func onPopViewController(with command: String?) {
+        print("Usuário retornou do fluxo:", command ?? "404")
+    }
+    
+    func navigateToTransactionsList() {
+        // Implemente a navegação para a lista de transações do seu app
+        // Por exemplo:
+        let transactionsViewController = TransactionsListViewController()
+        navigationController?.pushViewController(transactionsViewController, animated: true)
+    }
+}
+```
+
+**Nota:** Este método é opcional e possui uma implementação padrão vazia. Você só precisa implementá-lo se desejar tratar a navegação para a lista de transações quando solicitado pelo fluxo web.
+
 ---
 
 ## 🧪 Samples
